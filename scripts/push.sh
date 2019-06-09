@@ -31,10 +31,7 @@ tag_and_push_all() {
     else
         TAG=$1
     fi
-    DOCKER_REPO=${GROUP}/${REPO}
-    if [[ "$COMMIT" != "$TAG" ]]; then
-        docker tag ${DOCKER_REPO}:${COMMIT} ${DOCKER_REPO}:${TAG}
-    fi
+    
     push "$DOCKER_REPO:$TAG";
 }
 
