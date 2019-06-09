@@ -31,8 +31,8 @@ tag_and_push_all() {
     else
         TAG=$1
     fi
-    
-    push "$DOCKER_REPO:$TAG";
+    DOCKER_REPO=${GROUP}/${REPO}
+    push "$DOCKER_REPO:latest";
 }
 
 # Push snapshot when in master
